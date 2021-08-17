@@ -76,7 +76,7 @@ const Search = (props) => {
                     <button
                       className="btn btn btn-dark play-song horizontal-middle-align"
                       onClick={() => {
-                        playSong(song);
+                        playSong(song.track);
                       }}
                     >
                       Play Music
