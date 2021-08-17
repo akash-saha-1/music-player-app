@@ -1,0 +1,37 @@
+.country-page {
+    .title {
+        margin: 30px 0;
+        text-align: center;
+        color: darkblue;
+        font-weight: 600;
+        font-size: 22px;
+    }
+
+    .country-container {
+        padding: 10px;
+        margin-bottom: 20px;
+
+        h4 {
+            text-align: center;
+            color: white;
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        .city-list {
+            position: relative;
+            text-align: center;
+
+            .city-button {
+                margin: 10px;
+                min-width: 80px;
+                background-color: #E8E8E8;
+                color: black;
+
+                &:hover {
+                    background-color: darkgray;
+                }
+            }
+        }
+    }
+}

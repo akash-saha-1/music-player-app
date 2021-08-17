@@ -1,0 +1,176 @@
+html,
+body {
+  margin: 0;
+  font-family: 'open-sans';
+  /*sans-serif*/
+  ;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  line-height: 26px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: white;
+  color: black;
+}
+
+.container .body {
+  margin: 0 5px;
+  padding: 0;
+  width: auto;
+  max-width: 100%;
+  min-height: 600px;
+}
+
+.horizontal-middle-align {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.vertical-middle-align {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.horizontal-vertical-middle-align {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.row {
+  margin: 0;
+  padding: 0;
+}
+
+div[class^='col-'] {
+  padding: 0 10px;
+  margin: 0;
+}
+
+.container .col-12,
+div[class^='col-'],
+.col-12 {
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover,
+a:active {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+p {
+  color: black;
+  margin-bottom: 0;
+}
+
+p b {
+  font-weight: 500;
+}
+
+b {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.no-margin-top {
+  margin-top: 0 !important;
+}
+
+.btn {
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 500;
+  border-radius: 15px;
+}
+
+.modal-backdrop {
+  z-index: 3;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow-y-hidden {
+  overflow-y: hidden;
+}
+
+.tool-tip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tool-tip .tooltiptext {
+  visibility: hidden;
+  width: 350px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 4;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -170px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tool-tip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tool-tip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.container .body-container {
+  padding: 0 30px;
+}
+
+.container .main-container {
+  width: 100%;
+}
+
+@media(max-width:767px) {
+  .container .body {
+    padding: 0;
+    min-height: auto;
+  }
+}

@@ -1,0 +1,129 @@
+.artist-page {
+    padding: 20px 10px;
+
+    .title {
+        margin: 20px 0;
+        text-align: center;
+        font-weight: 600;
+        color: darkblue;
+        font-size: 22px;
+    }
+
+    .artist-list {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        position: relative;
+        justify-content: center;
+        margin-bottom: 20px;
+
+        .artist {
+            padding: 10px;
+            font-size: 18px;
+            border-radius: 20px;
+            min-width: 140px;
+            min-height: 40px;
+            margin: 10px;
+            width: max-content;
+            text-align: center;
+
+            &:hover {
+                cursor: pointer;
+                background-color: greenyellow !important;
+            }
+        }
+    }
+
+    .track-list {
+        margin-top: 50px;
+
+        h3 {
+            text-align: center;
+
+            span {
+                font-weight: 600;
+                color: darkblue;
+            }
+        }
+    }
+
+    .cards {
+        margin-top: 20px;
+
+        .card {
+            border: 0;
+            padding: 15px;
+
+            .card-wrapper {
+                background-color: #F0F0F0;
+                border-radius: 30px;
+                min-height: 510px;
+                text-align: center;
+
+                img {
+                    border-radius: 30px;
+                    min-height: 300px;
+                    max-height: 300px;
+                }
+
+                .card-body {
+                    padding: 10px;
+
+                    h4,
+                    h6,
+                    h5 {
+                        text-align: center;
+                    }
+
+                    h4 {
+                        font-weight: 700;
+                    }
+
+                    .play-song {
+                        padding: 6px 15px;
+                        margin-bottom: 15px;
+                        margin-top: 10px;
+                    }
+
+                    .more-info {
+                        outline: none;
+                        border: 2px solid #000;
+                        background: #f3f3f3;
+                        padding: 10px;
+                        border-radius: 30px;
+                        color: #000;
+                        cursor: pointer;
+                        width: 100%;
+                        max-width: 220px;
+                        font-size: 18px;
+                        font-weight: 600;
+                        position: relative;
+                    }
+
+                    button {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:767px) {
+    .artist-page {
+        .cards {
+            .card {
+                padding: 10px 30px;
+
+                .card-wrapper {
+                    min-height: 400px;
+
+                    img {
+                        min-height: 100px;
+                        height: 200px;
+                    }
+                }
+            }
+        }
+    }
+}
