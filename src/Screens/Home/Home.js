@@ -6,7 +6,7 @@ import ErrorModal from '../../Shared/Modal/ErrorModal/ErrorModal';
 import MusicPlayer from '../../Components/MusicPlayer/MusicPlayer';
 
 const Home = (props) => {
-  const [songsList, setSongsList] = useState([]);
+  const [songsList, setSongsList] = useState();
   const [musicPlayer, showMusicPlayer] = useState(false);
   const [song, setSong] = useState();
   const [songsLimit, setSongsLimit] = useState(
@@ -49,42 +49,44 @@ const Home = (props) => {
       <div className="home-page">
         <h3 className="title">Songs List</h3>
         <div className="cards col-12 row">
-          {songsList.map((song) => (
-            <div className="card col-md-4" key={song.key}>
-              <div className="card-wrapper">
-                <img
-                  className="card-img-top"
-                  src={song.share.image}
-                  alt="song-cover"
-                />
-                <div className="card-body">
-                  <h4>{song.title}</h4>
-                  {/* <h6>{song.subtitle}</h6> */}
-                  <h5>
-                    Artists:{' '}
-                    {song.artists.map((artist, index) => {
-                      if (index === 0) {
-                        return artist.alias;
-                      } else {
-                        return ', ' + artist.alias;
-                      }
-                    })}
-                  </h5>
-                  <button
-                    className="btn btn btn-dark play-song horizontal-middle-align"
-                    onClick={() => {
-                      playSong(song);
-                    }}
-                  >
-                    Play Music <i className="fas fa-music" />
-                  </button>
-                  <button className="btn more-info horizontal-middle-align">
-                    <a href={song.url}>More Information</a>
-                  </button>
+          {songsList &&
+            songsList.length > 0 &&
+            songsList.map((song) => (
+              <div className="card col-md-4" key={song.key}>
+                <div className="card-wrapper">
+                  <img
+                    className="card-img-top"
+                    src={song.share.image}
+                    alt="song-cover"
+                  />
+                  <div className="card-body">
+                    <h4>{song.title}</h4>
+                    <h5>
+                      Artists:{' '}
+                      {song.artists &&
+                        song.artists.map((artist, index) => {
+                          if (index === 0) {
+                            return artist.alias;
+                          } else {
+                            return ', ' + artist.alias;
+                          }
+                        })}
+                    </h5>
+                    <button
+                      className="btn btn btn-dark play-song horizontal-middle-align"
+                      onClick={() => {
+                        playSong(song);
+                      }}
+                    >
+                      Play Music <i className="fas fa-music" />
+                    </button>
+                    <button className="btn more-info horizontal-middle-align">
+                      <a href={song.url}>More Information</a>
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
       </div>
     </React.Fragment>

@@ -77,23 +77,25 @@ const Artists = (props) => {
           <h2 className="title">Artists</h2>
           <div className="col-12 artist-list">
             {artistList &&
-              artistList.map((artists, index) => {
-                return artists.artists.map((artist) => {
-                  return (
-                    <div
-                      className="artist"
-                      key={Math.random()}
-                      style={{
-                        backgroundColor: colorsList[index % 8],
-                      }}
-                      onClick={() => loadArtistSongs(artist.alias, artist.id)}
-                    >
-                      {artist.alias.charAt(0).toUpperCase() +
-                        artist.alias.slice(1)}
-                    </div>
-                  );
-                });
-              })}
+              artistList.map(
+                (artists, index) =>
+                  artists.artists &&
+                  artists.artists.map((artist) => {
+                    return (
+                      <div
+                        className="artist"
+                        key={Math.random()}
+                        style={{
+                          backgroundColor: colorsList[index % 8],
+                        }}
+                        onClick={() => loadArtistSongs(artist.alias, artist.id)}
+                      >
+                        {artist.alias.charAt(0).toUpperCase() +
+                          artist.alias.slice(1)}
+                      </div>
+                    );
+                  })
+              )}
           </div>
         </div>
         {songsList && selectedArtist && (
