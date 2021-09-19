@@ -50,7 +50,7 @@ const Home = (props) => {
         <h3 className="title">Songs List</h3>
         <div className="cards col-12 row">
           {songsList.map((song) => (
-            <div className="card col-md-4" key={song.title}>
+            <div className="card col-md-4" key={song.key}>
               <div className="card-wrapper">
                 <img
                   className="card-img-top"
